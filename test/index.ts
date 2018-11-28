@@ -1,4 +1,4 @@
-import * as Inherit from "../inherit"
+import * as Inherit from "../Inherit"
 
 function Parent(name: string, age: number) {
   this.name = name
@@ -11,6 +11,8 @@ Parent.prototype.say = function() {
 
 function Child(name: string, age: number, lessons: string[]) {
   Inherit.inheritContext(this, Parent, name, age)
+
+  this.lessons = lessons
 }
 Inherit.extend(Child, Parent)
 
